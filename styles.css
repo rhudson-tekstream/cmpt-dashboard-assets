@@ -17,26 +17,26 @@
 .grafana-panel .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Header styles */
 .grafana-panel .header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .grafana-panel .header h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
@@ -52,12 +52,12 @@
 }
 
 .grafana-panel .status-badge {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     display: inline-block;
 }
 
@@ -82,15 +82,15 @@
 /* Main content */
 .grafana-panel .main-content {
     display: grid;
-    gap: 30px;
+    gap: 15px;
 }
 
 .grafana-panel .section {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -100,30 +100,30 @@
 }
 
 .grafana-panel .section h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     color: #2c3e50;
-    border-bottom: 3px solid #667eea;
-    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 6px;
     margin-top: 0;
 }
 
 /* Info grid */
 .grafana-panel .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
 }
 
 .grafana-panel .info-item {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 20px;
+    gap: 4px;
+    padding: 12px;
     background: rgba(248, 249, 250, 0.8);
-    border-radius: 12px;
-    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
     transition: all 0.3s ease;
 }
 
@@ -136,14 +136,14 @@
 .grafana-panel .info-item label {
     font-weight: 600;
     color: #5a6c7d;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     margin: 0;
 }
 
 .grafana-panel .info-item span {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #2c3e50;
     word-break: break-all;
     margin: 0;
@@ -152,10 +152,10 @@
 /* Status text styles */
 .grafana-panel .status-text {
     font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
+    padding: 3px 8px;
+    border-radius: 12px;
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .grafana-panel .status-text.compliant {
@@ -228,16 +228,17 @@
 /* Responsive design */
 @media (max-width: 768px) {
     .grafana-panel .container {
-        padding: 15px;
+        padding: 8px;
     }
     
     .grafana-panel .header {
         flex-direction: column;
         text-align: center;
+        padding: 12px 15px;
     }
     
     .grafana-panel .header h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .grafana-panel .info-grid {
@@ -245,27 +246,27 @@
     }
     
     .grafana-panel .section {
-        padding: 20px;
+        padding: 12px;
     }
     
     .grafana-panel .app-header {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .grafana-panel .header h1 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     
     .grafana-panel .section h2 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
     
     .grafana-panel .info-item {
-        padding: 15px;
+        padding: 10px;
     }
 }
 
