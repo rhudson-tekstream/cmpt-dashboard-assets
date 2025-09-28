@@ -12,8 +12,8 @@
             <header class="header">
                 <h1>{{deviceName}}</h1>
                 <div class="device-status">
-                    <span class="status-badge {{#if (eq complianceStatus 'Compliant')}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
-                    <span class="status-badge {{#if (eq enrollmentStatus 'Enrolled')}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
+                    <span class="status-badge {{#if complianceStatus}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
+                    <span class="status-badge {{#if enrollmentStatus}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
                 </div>
             </header>
 
@@ -60,7 +60,7 @@
                         </div>
                         <div class="info-item">
                             <label>AC Power</label>
-                            <span class="status-text {{#if (eq deviceOnAcPower 'Yes')}}powered{{else}}not-powered{{/if}}">{{deviceOnAcPower}}</span>
+                            <span class="status-text {{#if deviceOnAcPower}}powered{{else}}not-powered{{/if}}">{{deviceOnAcPower}}</span>
                         </div>
                     </div>
                 </section>
@@ -75,11 +75,11 @@
                         </div>
                         <div class="info-item">
                             <label>Enrollment Status</label>
-                            <span class="status-text {{#if (eq enrollmentStatus 'Enrolled')}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
+                            <span class="status-text {{#if enrollmentStatus}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
                         </div>
                         <div class="info-item">
                             <label>Compliance</label>
-                            <span class="status-text {{#if (eq complianceStatus 'Compliant')}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
+                            <span class="status-text {{#if complianceStatus}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
                         </div>
                         <div class="info-item">
                             <label>Last Seen</label>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="info-item">
                             <label>Compromised</label>
-                            <span class="status-text {{#if (eq isCompromised 'No')}}safe{{else}}compromised{{/if}}">{{isCompromised}}</span>
+                            <span class="status-text {{#unless isCompromised}}safe{{else}}compromised{{/unless}}">{{isCompromised}}</span>
                         </div>
                         <div class="info-item">
                             <label>Roaming</label>
@@ -118,15 +118,15 @@
                     <div class="info-grid">
                         <div class="info-item">
                             <label>App Status</label>
-                            <span class="status-text {{#if (contains appStatus 'Installed')}}installed{{else}}not-installed{{/if}}">{{appStatus}}</span>
+                            <span class="status-text {{#if appStatus}}installed{{else}}not-installed{{/if}}">{{appStatus}}</span>
                         </div>
                         <div class="info-item">
                             <label>Assignment</label>
-                            <span class="status-text {{#if (contains appAssignmentStatus 'Assigned')}}assigned{{else}}not-assigned{{/if}}">{{appAssignmentStatus}}</span>
+                            <span class="status-text {{#if appAssignmentStatus}}assigned{{else}}not-assigned{{/if}}">{{appAssignmentStatus}}</span>
                         </div>
                         <div class="info-item">
                             <label>Installation</label>
-                            <span class="status-text {{#if (eq installationStatus 'Managed')}}managed{{else}}unmanaged{{/if}}">{{installationStatus}}</span>
+                            <span class="status-text {{#if installationStatus}}managed{{else}}unmanaged{{/if}}">{{installationStatus}}</span>
                         </div>
                         <div class="info-item">
                             <label>Last Action</label>
