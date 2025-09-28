@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Details - {{deviceName}}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grafana-panel">
+        <div class="container">
+            <header class="header">
+                <h1>Device Details</h1>
+                <div class="device-status">
+                    <span class="status-badge {{#if (eq complianceStatus 'Compliant')}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
+                    <span class="status-badge {{#if (eq enrollmentStatus 'Enrolled')}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <!-- Device Overview Section -->
+                <section class="section">
+                    <h2>Device Overview</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Device Name</label>
+                            <span>{{deviceName}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Device Group</label>
+                            <span>{{deviceGroup}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Location ID</label>
+                            <span>{{locationId}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Serial Number</label>
+                            <span>{{deviceSerialNumber}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Platform</label>
+                            <span>{{devicePlatform}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Model</label>
+                            <span>{{deviceModel}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>OS Version</label>
+                            <span>{{osVersion}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Country</label>
+                            <span>{{country}}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Enrollment Information -->
+                <section class="section">
+                    <h2>Enrollment Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Enrollment Date</label>
+                            <span>{{enrollmentDate}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Enrollment Status</label>
+                            <span class="status-text {{#if (eq enrollmentStatus 'Enrolled')}}enrolled{{else}}not-enrolled{{/if}}">{{enrollmentStatus}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Compliance Status</label>
+                            <span class="status-text {{#if (eq complianceStatus 'Compliant')}}compliant{{else}}non-compliant{{/if}}">{{complianceStatus}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Last Seen</label>
+                            <span>{{lastSeen}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Asset Number</label>
+                            <span>{{assetNumber}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Device Identifier</label>
+                            <span>{{deviceIdentifier}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Is Compromised</label>
+                            <span class="status-text {{#if (eq isCompromised 'No')}}safe{{else}}compromised{{/if}}">{{isCompromised}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Device Roaming</label>
+                            <span>{{deviceRoaming}}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Network Information -->
+                <section class="section">
+                    <h2>Network Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>MAC Address</label>
+                            <span>{{macAddress}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Wi-Fi IP Address</label>
+                            <span>{{wifiIpAddress}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>GPRS Connection</label>
+                            <span>{{gprsConnection}}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Information -->
+                <section class="section">
+                    <h2>System Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Available Memory</label>
+                            <span>{{availablePhysicalMemory}} MB</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Memory</label>
+                            <span>{{totalPhysicalMemory}} MB</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Battery Life</label>
+                            <span class="battery-level">{{batteryLifePercent}}%</span>
+                        </div>
+                        <div class="info-item">
+                            <label>AC Power Status</label>
+                            <span class="status-text {{#if (eq deviceOnAcPower 'Yes')}}powered{{else}}not-powered{{/if}}">{{deviceOnAcPower}}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>AC Power Sample Time</label>
+                            <span>{{acPowerSampleTime}}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Application Information -->
+                <section class="section">
+                    <h2>Application Information</h2>
+                    <div class="app-card">
+                        <div class="app-header">
+                            <h3>{{appName}}</h3>
+                            <span class="status-badge {{#if (contains appStatus 'Installed')}}installed{{else}}not-installed{{/if}}">{{#if (contains appStatus 'Installed')}}Installed{{else}}Not Installed{{/if}}</span>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>App Identifier</label>
+                                <span>{{appIdentifier}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>App Status</label>
+                                <span class="status-text {{#if (contains appStatus 'Installed')}}installed{{else}}not-installed{{/if}}">{{appStatus}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Assignment Status</label>
+                                <span class="status-text {{#if (contains appAssignmentStatus 'Assigned')}}assigned{{else}}not-assigned{{/if}}">{{appAssignmentStatus}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Installation Status</label>
+                                <span class="status-text {{#if (eq installationStatus 'Managed')}}managed{{else}}unmanaged{{/if}}">{{installationStatus}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Last Action</label>
+                                <span>{{lastActionTaken}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Last Action Time</label>
+                                <span>{{lastActionTimestamp}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>App First Seen</label>
+                                <span>{{appFirstSeen}}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>App Last Seen</label>
+                                <span>{{appLastSeen}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
